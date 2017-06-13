@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[ Chrome Browser is open]]>
+    </line>
+    <line>
+      <![CDATA[Enter the url= https://10.20.14.67:9091/]]>
+    </line>
+    <line>
+      <![CDATA[Enter the valid  Username ]]>
+    </line>
+    <line>
+      <![CDATA[Enter the valid password]]>
+    </line>
+    <line>
+      <![CDATA[Click on login button]]>
+    </line>
+    <line>
+      <![CDATA[login successful]]>
+    </line>
+    <line>
+      <![CDATA[Click on end tour Button]]>
+    </line>
+    <line>
+      <![CDATA[click on the search icon to search the user]]>
+    </line>
+    <line>
+      <![CDATA[enter the username and click on it ]]>
+    </line>
+    <line>
+      <![CDATA[Enter the message on chatbox]]>
+    </line>
+    <line>
+      <![CDATA[Chat message validated successfully]]>
+    </line>
+    <line>
+      <![CDATA[ Chrome Browser is open]]>
+    </line>
+    <line>
+      <![CDATA[Enter the url= https://10.20.14.67:9091/]]>
+    </line>
+    <line>
+      <![CDATA[Enter the valid  Username ]]>
+    </line>
+    <line>
+      <![CDATA[Enter the valid password]]>
+    </line>
+    <line>
+      <![CDATA[Click on login button]]>
+    </line>
+    <line>
+      <![CDATA[login successful]]>
+    </line>
+    <line>
+      <![CDATA[Click on end tour Button]]>
+    </line>
+    <line>
+      <![CDATA[click on the search icon to search the user]]>
+    </line>
+    <line>
+      <![CDATA[enter the username and click on it ]]>
+    </line>
+    <line>
+      <![CDATA[Enter the message on chatbox]]>
+    </line>
+    <line>
+      <![CDATA[Chat message validated successfully]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="28538" started-at="2017-06-13T05:32:32Z" finished-at="2017-06-13T05:33:01Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="28538" started-at="2017-06-13T05:32:32Z" finished-at="2017-06-13T05:33:01Z">
+      <class name="Testpkg.conversationFor2Users">
+        <test-method status="PASS" signature="test()[pri:0, instance:Testpkg.conversationFor2Users@9629756]" name="test" duration-ms="28527" started-at="2017-06-13T11:02:32Z" finished-at="2017-06-13T11:03:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[ Chrome Browser is open]]>
+            </line>
+            <line>
+              <![CDATA[Enter the url= https://10.20.14.67:9091/]]>
+            </line>
+            <line>
+              <![CDATA[Enter the valid  Username ]]>
+            </line>
+            <line>
+              <![CDATA[Enter the valid password]]>
+            </line>
+            <line>
+              <![CDATA[Click on login button]]>
+            </line>
+            <line>
+              <![CDATA[login successful]]>
+            </line>
+            <line>
+              <![CDATA[Click on end tour Button]]>
+            </line>
+            <line>
+              <![CDATA[click on the search icon to search the user]]>
+            </line>
+            <line>
+              <![CDATA[enter the username and click on it ]]>
+            </line>
+            <line>
+              <![CDATA[Enter the message on chatbox]]>
+            </line>
+            <line>
+              <![CDATA[Chat message validated successfully]]>
+            </line>
+            <line>
+              <![CDATA[ Chrome Browser is open]]>
+            </line>
+            <line>
+              <![CDATA[Enter the url= https://10.20.14.67:9091/]]>
+            </line>
+            <line>
+              <![CDATA[Enter the valid  Username ]]>
+            </line>
+            <line>
+              <![CDATA[Enter the valid password]]>
+            </line>
+            <line>
+              <![CDATA[Click on login button]]>
+            </line>
+            <line>
+              <![CDATA[login successful]]>
+            </line>
+            <line>
+              <![CDATA[Click on end tour Button]]>
+            </line>
+            <line>
+              <![CDATA[click on the search icon to search the user]]>
+            </line>
+            <line>
+              <![CDATA[enter the username and click on it ]]>
+            </line>
+            <line>
+              <![CDATA[Enter the message on chatbox]]>
+            </line>
+            <line>
+              <![CDATA[Chat message validated successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test -->
+      </class> <!-- Testpkg.conversationFor2Users -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

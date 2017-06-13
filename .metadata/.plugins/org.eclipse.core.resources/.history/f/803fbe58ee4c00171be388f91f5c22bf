@@ -1,0 +1,84 @@
+package TestData;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import jxl.CellType;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
+
+public class TestData {
+	String URL;
+	String userName;
+	String password;
+	String msg;
+	
+	
+	
+	
+	
+	public String getURL() {
+		return URL;
+	}
+
+	public void setURL(String uRL) {
+		URL = uRL;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	//private static final String FILE_NAME = "C:/Users/sinkar_s/Desktop/TestScript1.xlsx";
+	private static final String FILE_NAME = "D:/Test Workspace/xorchat/src/TestData.xlsx";
+	
+	public static void main(String[] args) throws IOException {
+		TestData t = new TestData();
+		FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
+		Workbook workbook = new XSSFWorkbook(excelFile);
+		Sheet datatypeSheet = workbook.getSheetAt(0);
+		Iterator<Row> iterator = datatypeSheet.iterator();
+		Cell currentCell;
+		while (iterator.hasNext()) {
+			Row currentRow = iterator.next();
+			Iterator<Cell> cellIterator = currentRow.iterator();			
+			currentCell = cellIterator.next();
+			System.out.print(currentCell.getStringCellValue() + "  ");
+			t.setURL(currentCell.getStringCellValue());
+			currentCell = cellIterator.next();
+			System.out.print(currentCell.getStringCellValue() + "  ");
+			String userName = currentCell.getStringCellValue();
+			currentCell = cellIterator.next();
+			System.out.print(currentCell.getStringCellValue() + "  ");
+			String password = currentCell.getStringCellValue();
+			currentCell = cellIterator.next();
+			System.out.print(currentCell.getStringCellValue() + "  ");
+			String msg = currentCell.getStringCellValue();
+			System.out.println();
+		}
+	}
+}

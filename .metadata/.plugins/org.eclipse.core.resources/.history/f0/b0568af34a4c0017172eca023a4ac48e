@@ -1,0 +1,34 @@
+package Testpkg;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import pageobjectspkg.loginpage;
+
+public class Userlogin {
+	WebDriver driver = new ChromeDriver();
+	public void userLogin() throws InterruptedException {
+		
+		loginpage loginpage = new loginpage(driver);
+		try {
+			loginpage.loginByUsername("XOR-IND\\sinkar_s", "xori123#");
+
+			System.out.println("login successful");
+			Reporter.log("login successful");
+		} catch (Exception e) {
+			Reporter.log("login failed");
+		}
+
+		
+	}
+
+}

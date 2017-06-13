@@ -1,0 +1,18 @@
+package Testpkg;
+
+public class Maintest {
+	
+	
+	Browser browser = new Browser();
+	
+	
+	
+	
+	
+
+	Message message = new Message();
+	public void sndMsg() throws InterruptedException{
+		browser.browserOpen();
+		message.msgSendReceive();
+	}
+}

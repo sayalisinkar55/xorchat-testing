@@ -1,0 +1,184 @@
+package utilities;
+
+import java.io.File;
+
+import java.io.IOException;
+
+import java.util.Hashtable;
+
+import jxl.Sheet;
+
+import jxl.Workbook;
+
+import jxl.read.biff.BiffException;
+
+ 
+
+/**
+
+ This is a utility class created to read the excel test data file before performing the test steps.
+
+This class loads the excel file and
+
+reads its column entries.
+ */
+
+public class ExcelReader {
+
+                /**
+
+                 * The worksheet to read in Excel file
+
+                 */
+
+ 
+
+                public static Sheet wrksheet;
+
+                /**
+
+                 * The Excel file to read
+
+                 */
+
+ 
+
+                public static Workbook wrkbook = null;
+
+                /**
+
+                 * Store the column data
+
+                 */
+
+ 
+
+                public static Hashtable<String, Integer> dict = new Hashtable<String, Integer>();
+
+                /**
+
+                 * Create a Constructor
+
+                 *
+
+                 * @param ExcelSheetPath
+
+                 * @throws BiffException
+
+                 * @throws WeblivException
+
+                 */
+
+ 
+
+                public ExcelReader(String ExcelSheetPath) throws IOException, BiffException {
+
+ 
+
+                            // Initialize3
+                                try {
+
+                                               wrkbook = Workbook.getWorkbook(new File(ExcelSheetPath));
+
+                                               wrksheet = wrkbook.getSheet("Sheet1");
+
+                                } catch (IOException e) {
+
+                                                throw new IOException();
+
+                                }
+
+                }
+
+                /**
+                 * Returns the Number of Rows
+
+                 *
+
+                 * @return Rows
+54
+                 */
+55
+ 
+56
+                public static int RowCount() {
+57
+                                return wrksheet.getRows();
+58
+                }
+59
+                /**
+60
+                 * Returns the Cell value by taking row and Column values as argument
+61
+                 *
+62
+                 * @param column
+63
+                 * @param row
+64
+                 * @return Cell contents
+65
+                 */
+66
+ 
+67
+                public static String ReadCell(int column, int row) {
+68
+                                return wrksheet.getCell(column, row).getContents();
+69
+                }
+70
+                /**
+71
+                * Create Column Dictionary to hold all the Column Names
+72
+                 */
+73
+                public static void ColumnDictionary() {
+74
+                                // Iterate through all the columns in the Excel sheet and store the
+75
+                                // value in Hashtable
+76
+                                for (int col = 0; col < wrksheet.getColumns(); col++) {
+77
+                                                dict.put(ReadCell(col, 0), col);
+78
+                                }
+79
+                }
+80
+                /**
+81
+                 * Read Column Names
+82
+                 *
+83
+                 * @param colName
+84
+                 * @return value
+85
+                 */
+86
+ 
+87
+                public static int GetCell(String colName) {
+88
+                                try {
+89
+                                                int value;
+90
+                                                value = ((Integer) dict.get(colName)).intValue();
+91
+                                                return value;
+92
+                                } catch (NullPointerException e) {
+93
+                                                return (0);
+94
+                                }
+95
+                }
+96
+}

@@ -1,0 +1,24 @@
+package utilities;
+
+;
+
+public class ExcelReader{
+	
+	public void readExcel()
+	{
+		Filter fillo = new Fillo();
+		  Connection con = fillo.getConnection("Excel_File/Sample.xlsx");
+		  Recordset rs = con.executeQuery("select * from Sheet1");
+		  while(rs.next())
+		  {
+		   System.out.println(rs.getField("Name"));
+		   
+		  }
+		  
+		  String query="Update Sheet1 Set Name='Sukan Singh' where Email='sukan@gmail.com'";
+		   
+		  con.executeUpdate(query);
+		   
+		  con.close();
+	}
+}

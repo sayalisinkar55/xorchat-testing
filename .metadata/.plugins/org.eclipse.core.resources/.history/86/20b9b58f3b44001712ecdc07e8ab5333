@@ -1,0 +1,42 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class DemoGmail {
+	String url = "https://www.gmail.com";
+	WebDriver driver;
+	
+	/*
+	public static void main(String[] args) {
+		FirstTestNG_Demo ft = new FirstTestNG_Demo();
+		ft.setDriver();
+		ft.Login();
+	}
+	*/
+	@BeforeTest
+	public void setDriver()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:/Users/singh_sk/Downloads/chromedriver_win32/chromedriver.exe");
+		driver = new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	@Test
+	public void Login() 
+	{
+		String expectedTitle = "Gmail";
+		driver.get(url);
+		String actualTitle = driver.getTitle();
+		System.out.println("actualTitle : "+actualTitle);
+		Assert.assertEquals(actualTitle, expectedTitle);
+		
+		driver.findElement(By.id("Email")).sendKeys("sukansingh");	//xpath //*[@id='Email']
+		driver.findElement(By.xpath("//*[@id='next']")).click();
+		driver.findElement(By.id("Passwd")).sendKeys("Spcl@best1");  // xpath //*[@id="Passwd"]
+		driver.findElement(By.id("signIn")).click();
+		
+		//driver.quit();
+	}
+}

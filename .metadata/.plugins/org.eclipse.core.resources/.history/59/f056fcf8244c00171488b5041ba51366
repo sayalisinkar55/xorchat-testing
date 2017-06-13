@@ -1,0 +1,74 @@
+/**
+ * 
+ */
+package Constantpkg;
+
+import org.openqa.selenium.By;
+
+/**
+ * @author Sinkar_S
+ *
+ */
+
+
+public class loginlocators {
+      
+        /**
+        * id for Enter userName
+         */
+	  public static final String LoginPage_Usernamefld = "userNameInput";
+	  
+	        /**
+	         * id for Enter Password
+	         */
+      public static final String LoginPage_Passwordfld = "passwordInput";
+      
+          /**
+           * id for click on submit_button
+           */
+      public static final String LoginPage_Loginbtn = "submitButton";
+  
+      public static final String Icon_symbol="menuEllipsis";
+               
+      /**
+       * xpath for click on end button
+       */
+       public static final String ENDButton_btn ="//div[@class='popover-navigation']/button[@class='btn btn-sm btn-default']";
+       
+      /**
+       * xpath for mouse hovering
+       */
+         public static final String Mouse_hover="//*[@id='live-chat']/h5/div/span[3]";   
+         
+      //xpath for add user button
+      
+      public static final String   Add_user ="//span[@title='Add User']/i";
+      //xpath for enter text
+      
+      public static final String  Enter_TEXT ="//input[1]";
+      //xpath for add username textbox
+      
+      public static final String  User_add ="//button[2]";
+      //Xpath for search button
+      
+      public static final String  search_button="//*[@id='_userSearch']";
+      //xapth to click on selected user
+      
+      public static final String click_user="//*[@id='_tickers']/div[2]/div/span[2]";
+      
+      public static final String NewEndButton_btn="//*[@id='step-0']/div[3]/button";
+      
+      // xapth to click on the chat text box  
+      public static final String click_click="chatText";
+      
+      
+     
+      
+      
+    
+    	
+}
+	
+    
+
+

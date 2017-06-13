@@ -1,0 +1,5 @@
+package TestData;
+
+public class TestData {
+	private static final String FILE_NAME = "C:/Users/sinkar_s/Desktop/TestScrip1.xlsx";
+}

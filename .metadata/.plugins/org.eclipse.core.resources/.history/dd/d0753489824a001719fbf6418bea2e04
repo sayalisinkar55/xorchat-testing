@@ -1,0 +1,100 @@
+/**
+ * 
+ */
+package Testpkg;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
+
+import pageobjectspkg.loginpage;
+
+/**
+ * @author Sinkar_S
+ *
+ */
+public class logintest {
+
+	@Test
+
+	public void varifyValidlogin() throws InterruptedException {
+		
+		 ChromeOptions options = new ChromeOptions();
+		 options.addArguments("--disable-notifications");//disable the notification
+		
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_2_29/chromedriver.exe");	
+		WebDriver driver = new ChromeDriver(options);	
+		
+	    driver.get("https://10.20.14.67:9091/");	//enter the url	
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);	
+		 
+		// login with first user
+		
+	    loginpage loginpage = new loginpage(driver);	// created object for login page	
+	
+	    loginpage.loginByUsername("XOR-IND\\sinkar_s", "xori123#");// enter the login details
+		System.out.println("login successful");
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//click on end toor button
+		loginpage.clickendtoorbtn();
+		
+		
+		WebElement e = driver.findElement(By.xpath("//*[@id='_userSearch']"));
+		e.click();
+		e.sendKeys("Abhijeet");
+		loginpage.clickuser();
+		loginpage.clickclick();
+		System.out.println("Message has been printed");
+		
+
+		
+
+//((JavascriptExecutor)driver).executeScript("window.open()");
+	 
+        //to open the new window
+		//for chrome
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_2_29/chromedriver.exe");	
+		WebDriver driver1 = new ChromeDriver(options);	
+	    driver1.get("https://10.20.14.67:9091/");	//enter the url	
+		System.out.println("window open");
+		driver1.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		
+		 
+		
+		
+		//login with new user 
+		loginpage loginpage1 = new loginpage(driver);
+        loginpage1.loginByUsername("XOR-IND\\sonaje_a","asdf#123");
+		System.out.println("login successful");
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//loginpage.clickendtoorbtn();
+		
+		
+		/*ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	    driver.switchTo().window(tabs2.get(1));
+	    driver.get("https://10.20.14.67:9091/");	
+	    
+	*/
+     	
+	
+
+
+		
+
+		/*loginpage.loginByUsername("XOR-IND\\kamble_n", "Christmas123");
+		loginpage.loginByUsername("XOR-IND\\bhanage_r", "karn321#");
+		*/
+		
+		
+	
+	}
+}

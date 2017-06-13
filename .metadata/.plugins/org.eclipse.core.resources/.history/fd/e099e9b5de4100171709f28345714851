@@ -1,0 +1,31 @@
+package var;
+
+public class variable {
+	int a=10;
+ double b=20.3;
+ double c=3.14785;
+ 
+	
+	
+	
+	public static void main(String[]args)
+	{
+		System.out.println("the value of a is:" );
+		System.out.println("the value of a is:" );
+		System.out.println("the value of a is:");
+		
+		
+		
+	}
+	
+	
+
+}
+
+
+
+
+//Write a Java program to declare three variable  a, b, & c and 
+//store the values respectively 10, 20.3 & 3.14785 . 
+//Then display their values on the screen.
+

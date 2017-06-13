@@ -1,0 +1,101 @@
+/**
+ * 
+ */
+package Testpkg;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
+import pageobjectspkg.loginpage;
+
+/**
+ * @author Sinkar_S
+ *
+ */
+public class Logintest_singleuser {
+
+	@Test
+
+	public void varifyValidlogin() throws InterruptedException {
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		options.addArguments("--start-maximized");
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_2_29/chromedriver.exe");	
+		WebDriver driver = new ChromeDriver(options);	
+	    driver.get("https://10.20.14.67:9091/");	
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);	 
+	    loginpage loginpage = new loginpage(driver);	
+	    try
+	    {
+	    loginpage.loginByUsername("XOR-IND\\sinkar_s", "xori123#");
+		
+	    System.out.println("login successful");
+	    }
+	    catch(Exception e)
+	    {
+	         e.printStackTrace();
+	      }
+		finally
+		{
+			System.out.println("login done successfully");
+		}
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		loginpage.clickendtoorbtn(driver);
+		WebElement e = driver.findElement(By.xpath("//*[@id='_userSearch']"));
+		e.click();
+		e.sendKeys("Abhijeet");
+		loginpage.clickuser();
+		loginpage.clickclick().sendKeys("Hi");
+		loginpage.clickclick().sendKeys(Keys.ENTER);
+		//driver.quit();
+		
+	
+		
+		System.out.println("Message has been printed");
+		try
+		{
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_2_29/chromedriver.exe");	
+		WebDriver driver1 = new ChromeDriver(options);	
+		options.addArguments("--start-maximized");
+	    driver1.get("https://10.20.14.67:9091/");
+		}
+		catch( Exception e2)
+		{
+			e2.printStackTrace();
+		}
+		System.out.println("window open");
+		driver1.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+	    loginpage loginpage1 = new loginpage(driver1);
+	    try
+	    {
+        loginpage1.loginByUsername("XOR-IND\\sonaje_a","asdf#123");
+		System.out.println("login successful");
+	    }
+	    catch(Exception e1)
+	    {
+	    	  e1.printStackTrace();
+	    }
+	    finally
+	    {
+	    	System.out.println("Next user log successfully");
+	    }
+		driver1.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		loginpage1.clickendtoorbtn(driver1);
+		loginpage1.clickclick().sendKeys("Hello");
+		loginpage1.clickclick().sendKeys(Keys.ENTER);
+		//driver1.quit();
+		
+		
+		
+
+		
+				
+	
+	}
+}

@@ -1,0 +1,9 @@
+package Testpkg;
+
+public class Maintest {
+
+	Message message = new Message();
+	public void sndMsg() throws InterruptedException{
+		message.msgSendReceive();
+	}
+}

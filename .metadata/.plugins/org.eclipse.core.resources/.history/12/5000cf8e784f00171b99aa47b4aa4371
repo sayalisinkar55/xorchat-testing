@@ -1,0 +1,324 @@
+/**
+ * 
+ */
+package pageobjectspkg;
+
+import Constantpkg.loginlocators;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Iterator;
+
+/**
+ * @author Sinkar_S
+ *
+ */
+public class chatBoxLandingPg {
+	WebDriver driver;
+	/**
+	 * Defined the variable to store the Xpath and Ids
+	 */
+	By username = By.id("userNameInput");
+	By password = By.id("passwordInput");
+	By signin = By.id("submitButton");
+	By icon = By.id("_menuEllipsis");
+	By Mousehover = By.xpath(Constantpkg.loginlocators.Mouse_hover);
+	By Endbtn = By.xpath(Constantpkg.loginlocators.ENDButton_btn);
+	By addUser = By.xpath(Constantpkg.loginlocators.Add_user);
+	By tapadd = By.xpath(Constantpkg.loginlocators.User_add);
+	By entertext = By.xpath(Constantpkg.loginlocators.Enter_TEXT);
+	By search_textBox = By.xpath(Constantpkg.loginlocators.clickOnSerchUser);
+	By clickuser = By.xpath(Constantpkg.loginlocators.click_user);
+	By txtMsg = By.id(Constantpkg.loginlocators.click_on_textbox);
+	By NewEndbtn = By.xpath("//*[@id='step-0']/div[3]/button");
+	By user1Message = By.xpath(Constantpkg.loginlocators.user1Message);
+	By trasferChat =By.xpath("//span[@title='Transfer Chat']/i[@class='fa fa-share']");
+	By leaveGroupIcon=By.xpath("//*[@title='Leave Group']");
+    By favouriteIcon=By.xpath("//*[@title='My favorites']");
+    By downloadChat=By.xpath("//*[@title='Download chat']");
+    By searchbtn=By.xpath("enterUserName");
+    
+	public chatBoxLandingPg(WebDriver driver) {
+		this.driver = driver;
+		Reporter.log(" Chrome Browser is open");
+		Reporter.log("Enter the url= https://10.20.14.67:9091/");
+	}
+
+	/**
+	 * 
+	 * Method created to enter username and password
+	 */
+	public void setUsername(String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.presenceOfElementLocated(username));
+		driver.findElement(username).sendKeys(value);
+		// userIDFld.sendKeys(value);
+		Reporter.log("Enter the valid  Username ");
+		
+	}
+
+	public void setPassword(String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.presenceOfElementLocated(password));
+		driver.findElement(password).sendKeys(value);
+		// passwordFld.sendKeys(value);
+		Reporter.log("Enter the valid password");
+	
+
+	}
+
+	/**
+	 * Method creted for to click on login button
+	 */
+
+	public void clickLoginButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(signin));
+		driver.findElement(signin).click();
+		// sloginBtn.click();
+		Reporter.log("Click on login button");
+		
+
+	}
+
+	/**
+	 * Method creted for the login page
+	 */
+	public void loginByUsername(String Username, String Password) {
+		try{
+		setUsername(Username);
+		setPassword(Password);
+		clickLoginButton();
+		Reporter.log("login successful");
+		} catch (Exception e) {
+			Reporter.log("login failed");		
+	}}
+
+	/**
+	 * Method creted for to click on the notification block which disply the
+	 * tour of the application
+	 */
+	public void clickEndTourBtn(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement btnEndTour = wait.until(ExpectedConditions.elementToBeClickable(Endbtn));
+		//WebElement h1 = driver.findElement(Endbtn);
+		btnEndTour.click();
+		Reporter.log("Click on end tour Button");
+		
+	}
+/**
+ * Method created for mouse hovering
+ */
+	
+	  public void mouseClickHover() {
+	  Actions action = new Actions(driver);
+	  WebElement MouseHover = driver.findElement(Mousehover);
+	  action.moveToElement(MouseHover).build().perform();
+	 
+	  }
+	  /**
+	   * Method Created for transfer chat
+	   */
+	 public void transferChat() throws InterruptedException
+	 {
+		 WebElement transferChat = driver.findElement(trasferChat);
+		 transferChat.click();
+		 //Thread.sleep(10000);
+	 }
+	 
+/**
+ * method created for add user
+ */
+	
+	 public void addUser()
+	  { 
+	   WebDriverWait wait = new WebDriverWait(driver,10);
+	   WebElement adduser=wait.until(ExpectedConditions.elementToBeClickable(addUser));
+	   adduser.click(); 
+	  WebElement findelement = driver.findElement(entertext);
+	  findelement.click();
+	  }
+	 
+	 /**method creted to click on leave group
+	  */
+    public void leaveGroup()
+    {
+      WebElement leavegroup = driver.findElement(leaveGroupIcon);
+      leavegroup.click();
+    }
+    
+    /**
+     * method click on favourite icon
+     */
+    public void favouriteIcon()
+    {
+    	WebElement favIcon = driver.findElement(favouriteIcon);
+    	favIcon.click();
+    }
+    /**
+     * Method click on downloadchat
+     */
+    public void downloadChat()
+    {
+    	WebElement downloadChat = driver.findElement(favouriteIcon);
+    	downloadChat.click();	
+    }
+	 /**
+	  * meyhod click on add user tab 
+	  */
+	  
+	  public void tapAdd() { 
+		  WebElement addUSer=driver.findElement(tapadd);
+		  addUSer.click();
+	   } 
+	  /**
+	   * method created to click on search box in add user group
+	   */
+	  public void searchbutton() {
+     WebElement searchBtn=driver.findElement(searchbtn); 
+     searchBtn.click();
+	  
+	   }
+	 
+	/**
+	 * Method to click on the serached user name
+	 */
+	public void selectUserToChat() {
+		/*WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement clickOnSerchUser=wait.until(ExpectedConditions.elementToBeClickable(clickOnSearchUser));
+		clickOnSerchUser.sendKeys(user);*/
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement selectUser = wait.until(ExpectedConditions.elementToBeClickable(clickuser));		
+		selectUser.click();
+		Reporter.log("click on the search icon to search the user");
+		   Reporter.log("enter the username and click on it ");
+				
+	}
+
+	/**
+	 * Method to switch the window
+	 */
+	public void switchToNewWidnow() {
+
+		Set<String> windowHandle = driver.getWindowHandles();
+		for (String winHandle : windowHandle) {
+			driver.switchTo().window(winHandle);
+		}
+
+	}
+	/**
+	 * Click on the message text area
+	 * 
+	 */
+	
+	public void enterMsgInChatBox(String msg){
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		//wait.until(ExpectedConditions.presenceOfElementLocated(txtMsg));
+		wait.until(ExpectedConditions.elementToBeClickable(txtMsg));
+		driver.findElement(txtMsg).sendKeys(msg);
+		driver.findElement(txtMsg).sendKeys(Keys.ENTER);
+		Reporter .log("Enter the message on chatbox");
+		
+	}
+	
+	public void validateUserMessage(String msg){
+		String userMsg = driver.findElement(user1Message).getText();
+		if(userMsg.equalsIgnoreCase(msg))
+			Reporter.log("Chat message validated successfully");
+		else
+			Reporter.log("Chat message mismatch");
+	}
+      
+	public void validateSearchIcon()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement searchTextBox = wait.until(ExpectedConditions.presenceOfElementLocated(search_textBox));
+		if( searchTextBox.isDisplayed())
+			Reporter.log("User is able to serach");
+		else
+			Reporter.log("User is not able to serach");
+		
+	
+	}
+	public void validateMouseHover()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement MouseHover = wait.until(ExpectedConditions.presenceOfElementLocated(Mousehover));
+		if( MouseHover.isDisplayed())
+			Reporter.log("Mouse is able to hover");
+		else
+			Reporter.log("Mouse is not able to hover");
+		
+	}
+	public void validateTransferChat() throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement trasfer_Chat = wait.until(ExpectedConditions.presenceOfElementLocated(trasferChat));
+		System.out.print(trasfer_Chat);
+		Thread.sleep(5000);
+		if( trasfer_Chat.isDisplayed())
+		{
+			trasfer_Chat.click();
+			Reporter.log(" user is able to transfer chat  ");
+		}
+		else
+			Reporter.log("user is Not able to transfer chat");
+	}
+	public void validateAddUser()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement adduser = wait.until(ExpectedConditions.presenceOfElementLocated(addUser));
+		if( adduser.isDisplayed())
+			Reporter.log(" user is able to  click on add user icon");
+		else
+			Reporter.log("user is Not able to click on add user icon");
+		
+	}
+	public void validateLeaveGroupe()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement leaveGroup = wait.until(ExpectedConditions.presenceOfElementLocated(leaveGroupIcon));
+		if( leaveGroup.isDisplayed())
+			Reporter.log(" user is able to  click on leave group icon");
+		else
+			Reporter.log("user is Not able to click on leave group icon");
+		
+		}
+	public void validateFavouriteIcon()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement favIcon= wait.until(ExpectedConditions.presenceOfElementLocated(favouriteIcon));
+		if( favIcon.isDisplayed())
+			Reporter.log(" user is able to  click on favourite icon");
+		else
+			Reporter.log("user is Not able to click on favourite icon");
+		
+		
+	}
+	
+	public void validatedownloadChatIcon()
+	{
+
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement  downloadChatIcon =wait.until(ExpectedConditions.presenceOfElementLocated(downloadChat));
+		if( downloadChatIcon.isDisplayed())
+			Reporter.log(" user is able to  click on downlaod chat icon");
+		else
+			Reporter.log("user is Not able to click on download chat icon");
+}
+}
