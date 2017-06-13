@@ -71,16 +71,16 @@ public class loginlocators {
       public static final String user1Message = ".//*[@id='chat-history']/div[1]/div[last()]/div[3]/div/span/p";
        
       //Xpath for transfer_chat icon validation
-      public static final String TransferChat="//span[@title='Transfer Chat']";       
+      public static final String TransferChat="//span[@title='Transfer Chat']/i[@class='fa fa-share']";       
      
       //X_path for leave group icon validation
-      public static final String LeaveGroup="//*[@title='Leave Group']";
+      public static final String LeaveGroup="//span[@title='Leave Group']";
       
       //X_path for favourite icon validation
-      public static final String  Favpurite="//*[@title='My favorites']";
+      public static final String  Favpurite="//span[@title='My favorites']";
       
       ///X_path for downloadchat validation
-      public static final String downloadChat="//*[@title='Download chat']";
+      public static final String downloadChat="//span[@title='Download chat']";
       
       //X_path for enter user name in add group
       public static final String enterUserName="html/body/init-component/div/div[1]/div/div[2]/online-component/chat-component/div/div[4]/div/div/div[1]/input";

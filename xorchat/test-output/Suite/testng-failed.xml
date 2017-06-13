@@ -7,11 +7,12 @@
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="Testpkg.conversationFor2Users">
+      <class name="Testpkg.Validation">
         <methods>
           <include name="test"/>
+          <include name="verifyConversationFor2Users"/>
         </methods>
-      </class> <!-- Testpkg.conversationFor2Users -->
+      </class> <!-- Testpkg.Validation -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

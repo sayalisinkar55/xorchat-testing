@@ -18,6 +18,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pageobjectspkg.chatBoxLandingPg;
@@ -34,7 +35,7 @@ public class Validation {
 	 * 
 	 * Passing the parameter
 	 */
-	public void verifyConversationFor2Users(String userName, String password, String URL, String msg,String user) 
+		public void verifyConversationFor2Users(String userName, String password, String URL, String msg,String user) 
 			throws InterruptedException {		
 		/**
 		 * open the new chrome_browser
@@ -50,7 +51,7 @@ public class Validation {
 		options.setExperimentalOption("prefs", prefs);
 		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_2_29/chromedriver.exe");
 		WebDriver driver = new ChromeDriver(options);
-	
+		
 		driver.get(URL);
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -74,31 +75,32 @@ public class Validation {
 		 */
 		objchatboxLandingPg.validateTransferChat();
 		objchatboxLandingPg.transferChat();
-		/**
+	/*	*//**
 		 * click on leave group
 		 *//*
-		objchatboxLandingPg.leaveGroup();
-		objchatboxLandingPg.validateLeaveGroupe();
+    	objchatboxLandingPg.validateLeaveGroupe();
+		//objchatboxLandingPg.leaveGroup();
 		*//**
 		 * click on fav icon
 		 *//*
-		objchatboxLandingPg.favouriteIcon();
 		objchatboxLandingPg.validateFavouriteIcon();
+		//objchatboxLandingPg.favouriteIcon();
+		
 		*//**
 		 * click on download chat
 		 *//*
-		objchatboxLandingPg.downloadChat();
 		objchatboxLandingPg.validatedownloadChatIcon();
-		
+		//objchatboxLandingPg.downloadChat();
 	
-		*/
-		driver.quit();
+	*/
+		
+		//driver.quit();
 	}
 
 	/**
      * Fetch the data from Excel
      */
-	@Test
+	@Test(priority=1)
 	public void test() throws InterruptedException, IOException {
 		conversationFor2Users myClass = new conversationFor2Users();
         
@@ -131,7 +133,7 @@ public class Validation {
 		/**
 		 * Launch The new browser
 		 */
-			myClass.verifyConversationFor2Users( userName,  password,  URL,  msg,user);	
+			verifyConversationFor2Users( userName,  password,  URL,  msg,user);	
 			
 				
 		}		

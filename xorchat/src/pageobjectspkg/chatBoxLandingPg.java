@@ -150,7 +150,7 @@ public class chatBoxLandingPg {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		 WebElement trasfer_Chat = wait.until(ExpectedConditions.elementToBeClickable(trasferChat));
 		 trasfer_Chat.click();
-		 Thread.sleep(10000);
+		 Thread.sleep(20000);
 	 }
 	 public void cancelbtnTransferChat() throws InterruptedException 
 	 {
@@ -165,10 +165,11 @@ public class chatBoxLandingPg {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			WebElement trasfer_Chat = wait.until(ExpectedConditions.presenceOfElementLocated(trasferChat));
 					
-			/*if( trasfer_Chat.isDisplayed())
-				Reporter.log(" user is able to transfer chat  ");
+			//if( trasfer_Chat.isDisplayed())
+			if(trasfer_Chat.isEnabled())
+				Reporter.log(" transfer chat varified  ");
 			else
-				Reporter.log("user is Not able to transfer chat");*/
+				Reporter.log("transfer chat  is not varified");
 		}
 	 
               /**
@@ -279,7 +280,10 @@ public class chatBoxLandingPg {
 		   Reporter.log("enter the username and click on it ");
 				
 	}
-
+  public void varifySearchIcon()
+  {
+	  
+  }
 	/**
 	 * Method to switch the window
 	 */

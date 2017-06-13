@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="36.552">
+           time="25.139">
   <properties />
   
   
-            <testcase name="test" time="36.552" classname="Testpkg.conversationFor2Users" />
+            <testcase name="test" time="25.139" classname="Testpkg.conversationFor2Users" />
       
 </testsuite>

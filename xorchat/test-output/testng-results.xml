@@ -68,12 +68,12 @@
       <![CDATA[Chat message validated successfully]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28538" started-at="2017-06-13T05:32:32Z" finished-at="2017-06-13T05:33:01Z">
+  <suite name="Default suite" duration-ms="31697" started-at="2017-06-13T09:39:30Z" finished-at="2017-06-13T09:40:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28538" started-at="2017-06-13T05:32:32Z" finished-at="2017-06-13T05:33:01Z">
+    <test name="Default test" duration-ms="31697" started-at="2017-06-13T09:39:30Z" finished-at="2017-06-13T09:40:02Z">
       <class name="Testpkg.conversationFor2Users">
-        <test-method status="PASS" signature="test()[pri:0, instance:Testpkg.conversationFor2Users@9629756]" name="test" duration-ms="28527" started-at="2017-06-13T11:02:32Z" finished-at="2017-06-13T11:03:01Z">
+        <test-method status="PASS" signature="test()[pri:0, instance:Testpkg.conversationFor2Users@9629756]" name="test" duration-ms="31687" started-at="2017-06-13T15:09:30Z" finished-at="2017-06-13T15:10:02Z">
           <reporter-output>
             <line>
               <![CDATA[ Chrome Browser is open]]>
